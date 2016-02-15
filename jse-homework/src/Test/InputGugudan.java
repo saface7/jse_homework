@@ -16,9 +16,14 @@ public class InputGugudan {
 		int a = scanner.nextInt();
 		int b = 0;
 		
-		for (int i = 1 ; i <= 9; i++) {
-			b = a*i;
-			System.out.println(a + "*" + i + "=" + b);
+		if (a==0 || a<0 ) {
+			System.out.println("잘못입력했습니다");
+		} else {
+			for (int i = 1 ; i <= 9; i++) {
+				b = a*i;
+				System.out.println(a + "*" + i + "=" + b);
+			}
+
 		}
 	}
 }
