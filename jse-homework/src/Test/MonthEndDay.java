@@ -12,25 +12,31 @@ public class MonthEndDay {
 	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("월을 입력하세요");
+		System.out.println("연도와 월을 입력하세요");
 		int month = 0;
+		int result = 0;
+		int year = 0;
+		
+		year = scanner.nextInt();
 		month = scanner.nextInt();
 		
 		switch (month) {
 		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-			System.out.println(month + "월의 끝날은 31일입니다.");
+			result = 31;
 			break;
 		case 4: case 6: case 9: case 11:
-			System.out.println(month + "월의 끝날은 30일입니다.");
+			result = 30;
 			break;
 		case 2:
-			System.out.println(month + "월의 끝날은 29일입니다.");
-			break;
-
+	         result = 28;
+	         if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+			  result = 29;
+			}
+	         break;
 		default:
 			System.out.println("잘못된 값입니다.");
 			break;
 		}
+		System.out.println(month + "월의 끝날은"+ result+ "입니다");
 	}
-
 }
